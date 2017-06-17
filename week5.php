@@ -25,15 +25,14 @@ echo date("F月j日 星期l A H點i分s秒",$changed);
 <b>
 <?php 
 
-// PHP 5.1 以後需要在程式中增加時區的設定如下,如果你的php是5.1以前下面這行就不需要加了!! 
+
 date_default_timezone_set('Asia/Taipei'); 
-//現在時間(求出多少秒) 
+ 
 $now=date("U"); 
-//你要的結束時間(目前是以2009年1月1日0時0分0秒當做結束時間) 
+
 $end=mktime(0,0,0,1,1,2018); 
-//結束時間-現在時間＝差距的時間 
+
 $time=$end-$now; 
-//差距時間利用intval()去求出整數值,/60=>分,再/60=>時,/24=>天 
 $day=intval($time/60/60/24); 
 $hour=intval($time/60/60); 
 $minute=intval($time/60); 
